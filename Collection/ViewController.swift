@@ -49,7 +49,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
             let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
             let cellWidthIncludingSpacing = (collectionView.frame.width / 1.3) + layout.minimumLineSpacing
             
-            // Устанавливаем целевую позицию
             let offsetX = targetContentOffset.pointee.x
             let approximateIndex = (offsetX + (cellWidthIncludingSpacing / 2)) / cellWidthIncludingSpacing
             let index = round(approximateIndex)
@@ -68,7 +67,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         cell.backgroundColor = .lightGray
-        cell.layer.cornerRadius = 8 // Установка радиуса закругления
+        cell.layer.cornerRadius = 8
         cell.layer.masksToBounds = true
         
         return cell
